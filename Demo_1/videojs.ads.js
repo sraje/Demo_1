@@ -221,12 +221,13 @@
           // before ad playback began. With a custom ad display or burned-in
           // ads, the content player state hasn't been modified and so no
           // restoration is required
-
-          if (player.src()) {
-              // the player was in src attribute mode before the ad and the
+          //if (player.src()) {
+          if (player.currentSrc()){  
+          // the player was in src attribute mode before the ad and the
               // src attribute has not been modified, no restoration is required
               // to resume playback
-              srcChanged = player.src() !== snapshot.src;
+              //changed from pler.src
+              srcChanged = player.currentSrc() !== snapshot.src;
           } else {
               // the player was configured through source element children
               // and the currentSrc hasn't changed, no restoration is required
@@ -425,6 +426,7 @@
                         },
                         events: {
                             'adend': function () {
+                   
                                 this.state = 'content-playback';
                             }
                         }

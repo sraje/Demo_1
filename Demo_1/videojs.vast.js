@@ -16,7 +16,7 @@
 
     defaults = {
         // seconds before skip button shows, negative values to disable skip button altogether
-        skip: 5
+        skip: 2
     },
 
     Vast = function (player, settings) {
