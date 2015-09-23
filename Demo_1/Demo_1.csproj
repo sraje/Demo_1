@@ -139,6 +139,7 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="test_demo_poster_text.png" />
     <Content Include="vast-client.js" />
     <Content Include="videojs.ads.css" />
     <Content Include="videojs.ads.js" />
