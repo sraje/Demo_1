@@ -30,7 +30,7 @@
     <p class="description">AMP VAST plugin examples.</p>
     <div class="example-video-container">
         <p class="description">No autoplay.</p>
-        <video id="vid1" class="azuremediaplayer amp-default-skin" controls preload="auto"
+        <video id="vid1" class="azuremediaplayer amp-default-skin amp-big-play-centered" controls preload="auto"
                poster="test_demo_poster_text.png"
                data-setup='{}'
                width='640'
@@ -70,7 +70,7 @@
       //  vid2.muted(true);
         vid2.ads();
         vid2.vast({
-            url: 'vast_test.xml'
+            url: 'vast_test_manifest.xml'
         });
     </script>
 </body>
