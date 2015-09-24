@@ -1,31 +1,77 @@
-﻿@{
-    ViewBag.Title = "Home Page";
-}
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Video.js VAST Example</title>
+    <link href="//amp.azure.net/libs/amp/1.4.0/skins/amp-default/azuremediaplayer.min.css" rel="stylesheet">
+    <link href="videojs.ads.css" rel="stylesheet" type="text/css">
+    <link href="videojs.vast.css" rel="stylesheet" type="text/css">
+    <style type="text/css">
+        .description {
+            background-color: #eee;
+            border: 1px solid #777;
+            padding: 10px;
+            font-size: .8em;
+            line-height: 1.5em;
+            font-family: Verdana, sans-serif;
+        }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="http://asp.net" class="btn btn-primary btn-large">Learn more &raquo;</a></p>
-</div>
+        .example-video-container {
+            display: inline-block;
+        }
+    </style>
+    <!--[if lt IE 9]><script src="lib/es5.js"></script><![endif]-->
+    <script src="//amp.azure.net/libs/amp/1.4.0/azuremediaplayer.min.js"></script>
+    <script src="videojs.ads.js"></script>
+    <script src="vast-client.js"></script>
+    <script src="videojs.vast.js"></script>
+</head>
+<body>
+    <p class="description">AMP VAST plugin examples.</p>
+    <div class="example-video-container">
+        <p class="description">No autoplay.</p>
+        <video id="vid1" class="azuremediaplayer amp-default-skin" controls preload="auto"
+               poster="test_demo_poster_text.png"
+               data-setup='{}'
+               width='640'
+               height='400'>
+            <!--<source src="http://video-js.zencoder.com/oceans-clip.mp4" type='video/mp4'>
+            <source src="http://video-js.zencoder.com/oceans-clip.webm" type='video/webm'>
+            <source src="http://video-js.zencoder.com/oceans-clip.ogv" type='video/ogg'>-->
+            <source src="http://srajetestservice.streaming.mediaservices.windows.net/8de9e40d-7803-4b18-a0ff-7b0cd767283e/Chihuahua_Bubbles_-_Some_Cute_Slow_Motion.ism/Manifest" type="application/vnd.ms-sstr+xml">
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+            <p>Video Playback Not Supported</p>
+        </video>
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+    <div class="example-video-container">
+        <p class="description">With autoplay.</p>
+        <video id="vid2" class="azuremediaplayer amp-default-skin" autoplay controls preload="auto"
+               poster=""
+               data-setup='{}'
+               width='640'
+               height='400'>
+            <source src="http://srajetestservice.streaming.mediaservices.windows.net/8de9e40d-7803-4b18-a0ff-7b0cd767283e/Chihuahua_Bubbles_-_Some_Cute_Slow_Motion.ism/Manifest" type="application/vnd.ms-sstr+xml">
+            <!--<source src="http://video-js.zencoder.com/oceans-clip.mp4" type='video/mp4'>
+                <source src="http://video-js.zencoder.com/oceans-clip.webm" type='video/webm'>
+              <source src="http://video-js.zencoder.com/oceans-clip.ogv" type='video/ogg'>-->
+            <p>Video Playback Not Supported</p>
+        </video>
     </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
-</div>
+    <script>
+        var vid1 = videojs('vid1'),
+            vid2 = videojs('vid2');
+
+        // vid1.muted(true);
+        vid1.ads();
+        vid1.vast({
+            url: 'http://videoads.theonion.com/vast/270.xml'
+        });
+
+        //  vid2.muted(true);
+        vid2.ads();
+        vid2.vast({
+            url: 'http://videoads.theonion.com/vast/270.xml'
+        });
+    </script>
+</body>
+</html>

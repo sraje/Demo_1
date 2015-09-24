@@ -21,6 +21,5 @@ c:\users\saraje\documents\visual studio 2013\Projects\Demo_1\Demo_1\bin\System.W
 c:\users\saraje\documents\visual studio 2013\Projects\Demo_1\Demo_1\bin\System.Web.WebPages.Razor.xml
 c:\users\saraje\documents\visual studio 2013\Projects\Demo_1\Demo_1\bin\Newtonsoft.Json.xml
 c:\users\saraje\documents\visual studio 2013\Projects\Demo_1\Demo_1\bin\Antlr3.Runtime.pdb
-c:\users\saraje\documents\visual studio 2013\Projects\Demo_1\Demo_1\obj\Debug\Demo_1.csprojResolveAssemblyReference.cache
 c:\users\saraje\documents\visual studio 2013\Projects\Demo_1\Demo_1\obj\Debug\Demo_1.dll
 c:\users\saraje\documents\visual studio 2013\Projects\Demo_1\Demo_1\obj\Debug\Demo_1.pdb
