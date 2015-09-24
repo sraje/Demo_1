@@ -142,6 +142,7 @@
     <Content Include="Scripts\_references.js" />
     <Content Include="test_demo_poster_text.png" />
     <Content Include="vast-client.js" />
+    <Content Include="vast_test.xml" />
     <Content Include="videojs.ads.css" />
     <Content Include="videojs.ads.js" />
     <Content Include="videojs.vast.css" />

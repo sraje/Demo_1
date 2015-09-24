@@ -16,7 +16,7 @@
 
     defaults = {
         // seconds before skip button shows, negative values to disable skip button altogether
-        skip: 2
+        skip: 15
     },
 
     Vast = function (player, settings) {
@@ -255,7 +255,7 @@
                 player.loadingSpinner.el().style.display = "none";
                 var timeLeft = Math.ceil(settings.skip - player.currentTime());
                 if (timeLeft > 0) {
-                    player.vast.skipButton.innerHTML = "Skip in " + timeLeft + "...";
+                    player.vast.skipButton.innerHTML = "Skip Ad in " + timeLeft + "...";
                 } else {
                     if ((' ' + player.vast.skipButton.className + ' ').indexOf(' enabled ') === -1) {
                         player.vast.skipButton.className += " enabled";
